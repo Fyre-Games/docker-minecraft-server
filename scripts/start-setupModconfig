@@ -9,7 +9,7 @@ case "X$MODCONFIG" in
     log "Downloading mod/plugin configs via HTTP"
     log "  from $MODCONFIG ..."
     curl -sSL -o /tmp/modconfig.zip "$MODCONFIG"
-    if [ "$TYPE" = "SPIGOT" ]; then
+    if [ "$TYPE" = "SPIGOT" || "$TYPE" = "CUSTOM"]; then
       mkdir -p /data/plugins
       unzip -o -d /data/plugins /tmp/modconfig.zip
     else
